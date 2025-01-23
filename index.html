@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SproutLine - Современный способ общения</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">SproutLine</div>
+				<ul>
+					<li><a href="#features">Возможности</a></li>
+					<li><a href="#download">Скачать</a></li>
+					<li>
+						<button class="instruction-btn" onclick="toggleInstructions()">
+							<i class="fas fa-book"></i> Инструкция
+						</button>
+					</li>
+					<li><a href="#about">О нас</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Общайтесь без границ</h1>
+				<p>Быстрый, безопасный и удобный мессенджер для всех</p>
+				<a href="#download" class="download-btn">Скачать сейчас</a>
+			</div>
+			<div class="hero-image">
+				<img src="img/sprout.jpg" alt="Sprout" />
+			</div>
+			<div class="line-image">
+				<img src="img/line.jpg" alt="Line" />
+			</div>
+			<div class="leaf-bg-1">🌿</div>
+			<div class="leaf-bg-3">🌱</div>
+		</section>
+
+		<section id="features">
+			<h2>Возможности</h2>
+			<div class="features-grid">
+				<div class="feature-card">
+					<i class="fas fa-lock"></i>
+					<h3>Безопасность</h3>
+					<p>Ваши данные в безопасности</p>
+				</div>
+				<div class="feature-card">
+					<i class="fas fa-bolt"></i>
+					<h3>Скорость</h3>
+					<p>Мгновенные сообщения</p>
+				</div>
+				<div class="feature-card">
+					<i class="fas fa-users"></i>
+					<h3>Групповые чаты</h3>
+					<p>Общайтесь с друзьями</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="download">
+			<h2>Скачать приложение</h2>
+			<div class="download-content">
+				<div class="download-info">
+					<i class="fab fa-windows"></i>
+					<h3>Windows</h3>
+					<p>Доступно для Windows 10/11</p>
+				</div>
+				<div class="download-buttons">
+					<a
+						href="./downloads/client.exe"
+						class="platform-btn client-btn"
+						download
+					>
+						<i class="fas fa-desktop"></i>
+						Скачать клиент
+					</a>
+					<a
+						href="./downloads/server.exe"
+						class="platform-btn server-btn"
+						download
+					>
+						<i class="fas fa-server"></i>
+						Скачать сервер
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<div class="instruction-panel">
+			<button class="close-btn" onclick="toggleInstructions()">
+				<i class="fas fa-times"></i>
+			</button>
+			<div class="instruction-content">
+				<h2>Инструкция по установке</h2>
+				<div class="instruction-steps">
+					<div class="step-group">
+						<h3><i class="fas fa-server"></i> 1. Настройка сервера</h3>
+						<ol>
+							<li>
+								Скачайте и установите
+								<a href="https://ngrok.com/download" target="_blank">ngrok</a>
+							</li>
+							<li>Запустите сервер:<br /><code>python server.py</code></li>
+							<li>
+								Откройте ngrok и введите(например):<br /><code
+									>ngrok tcp 5555</code
+								>
+							</li>
+							<li>
+								Скопируйте полученный адрес и порт из строки(возможный
+								пример):<br /><code>tcp://8.tcp.ngrok.io:12345</code>
+							</li>
+						</ol>
+					</div>
+
+					<div class="step-group">
+						<h3><i class="fas fa-desktop"></i> 2. Настройка клиента</h3>
+						<div class="step-list">
+							<li>При запуске клиента вам потребуется ввести:</li>
+							<ul>
+								<li>Сначала адрес сервера (например: 8.tcp.ngrok.io)</li>
+								<li>Затем порт (например: 12345)</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="step-group">
+						<h3><i class="fas fa-exclamation-circle"></i> Важно</h3>
+						<ul class="tips-list">
+							<li>
+								<i class="fas fa-check-circle"></i> Запускайте сначала сервер,
+								затем клиент
+							</li>
+							<li>
+								<i class="fas fa-sync-alt"></i> Адрес меняется при каждом
+								запуске ngrok
+							</li>
+							<li>
+								<i class="fas fa-users"></i> Можно подключить несколько клиентов
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="overlay" onclick="toggleInstructions()"></div>
+
+		<section id="about">
+			<h2>О проекте</h2>
+			<div class="about-container">
+				<div class="about-content">
+					<div class="disclaimer-card">
+						<h3>Важная информация</h3>
+						<p>
+							SproutLine создан исключительно в образовательных целях. Наш
+							мессенджер - это демонстрация возможностей современных технологий
+							и безопасного общения.
+						</p>
+						<p>
+							Мы не храним личные данные пользователей и обеспечиваем полную
+							конфиденциальность общения.
+						</p>
+					</div>
+					<div class="developer-card">
+						<h3>Разработчик</h3>
+						<div class="developer-info">
+							<i class="fab fa-github"></i>
+							<div class="dev-details">
+								<p>Исходный код проекта доступен на GitHub:</p>
+								<a
+									href="https://github.com/fail4k/SproutLine"
+									class="github-link"
+									target="_blank"
+									>SproutLine</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="features-list">
+						<h3>Особенности проекта</h3>
+						<ul>
+							<li><i class="fas fa-shield-alt"></i> Открытый исходный код</li>
+							<li><i class="fas fa-user-shield"></i> Защита личных данных</li>
+							<li><i class="fas fa-code"></i> Современные технологии</li>
+							<li><i class="fas fa-laptop-code"></i> Кроссплатформенность</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault()
+
+					const targetId = this.getAttribute('href')
+					const targetSection = document.querySelector(targetId)
+
+					if (targetSection) {
+						targetSection.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start',
+						})
+					}
+				})
+			})
+
+			function toggleInstructions() {
+				document.querySelector('.instruction-panel').classList.toggle('active')
+				document.querySelector('.overlay').classList.toggle('active')
+				document.body.classList.toggle('no-scroll')
+			}
+		</script>
+	</body>
+</html>
