@@ -1,0 +1,1001 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Segoe UI', sans-serif;
+	line-height: 1.6;
+	background: #0a0a0a;
+	color: #fff;
+}
+
+/* Навигация */
+header {
+	background: rgba(15, 15, 15, 0.95);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: logoGlow 3s ease-in-out infinite;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	gap: 2rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s;
+}
+
+nav a:hover {
+	color: #00ff88;
+}
+
+/* Главный экран */
+.hero {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 5%;
+	max-width: 1400px;
+	margin: 0 auto;
+	background: #0a0a0a;
+}
+
+.hero-content {
+	flex: 1;
+	padding-right: 5rem;
+}
+
+.hero h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: titleSlide 1s ease-out;
+}
+
+.hero p {
+	font-size: 1.2rem;
+	color: #aaa;
+	margin-bottom: 2rem;
+	animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.download-btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	color: #000;
+	text-decoration: none;
+	border-radius: 30px;
+	font-weight: bold;
+	transition: transform 0.3s, box-shadow 0.3s;
+	animation: buttonPop 1s ease-out 1s both;
+}
+
+.download-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+}
+
+/* Секция возможностей */
+#features {
+	padding: 5rem 1rem;
+	background: #111;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 3rem auto;
+}
+
+.feature-card {
+	padding: 2rem;
+	text-align: center;
+	background: #1a1a1a;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s;
+}
+
+.feature-card:hover {
+	transform: translateY(-10px);
+	background: #222;
+}
+
+.feature-card i {
+	font-size: 2.5rem;
+	color: #00ff88;
+	margin-bottom: 1rem;
+}
+
+/* Секция скачивания */
+#download {
+	padding: 5rem 1rem;
+	margin-top: 50px;
+	text-align: center;
+	background: #0a0a0a;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.download-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+	flex-wrap: wrap;
+}
+
+.platform-btn {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 1rem 2rem;
+	background: #1a1a1a;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.platform-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
+	background: #222;
+}
+
+/* Заголовки секций */
+section h2 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* Анимации */
+@keyframes logoGlow {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes titleSlide {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes buttonPop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+	.hero {
+		flex-direction: column;
+		text-align: center;
+		padding-top: 5rem;
+	}
+
+	.hero-content {
+		padding-right: 0;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+	}
+
+	nav ul {
+		display: none;
+	}
+}
+
+.github-link:hover {
+	color: #00ff88;
+}
+
+.features-list ul {
+	list-style: none;
+}
+
+.features-list li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	color: #aaa;
+}
+
+.features-list i {
+	color: #00ff88;
+}
+
+/* Обновленная секция скачивания */
+#download {
+	padding: 5rem 1rem;
+	text-align: center;
+	background: #0a0a0a;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.download-content {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2rem;
+	background: #1a1a1a;
+	border-radius: 20px;
+	box-shadow: 0 5px 20px rgba(0, 255, 136, 0.1);
+}
+
+.download-info {
+	margin-bottom: 2rem;
+}
+
+.download-info i {
+	font-size: 4rem;
+	color: #00ff88;
+	margin-bottom: 1rem;
+}
+
+.download-info h3 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	color: #fff;
+}
+
+.download-info p {
+	color: #aaa;
+	margin-bottom: 2rem;
+}
+
+.download-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.platform-btn {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 1rem 2rem;
+	background: #222;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+	min-width: 200px;
+}
+
+.client-btn {
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	color: #000;
+	font-weight: bold;
+}
+
+.server-btn {
+	background: #222;
+	border: 1px solid #00ff88;
+}
+
+.platform-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
+
+.client-btn:hover {
+	background: linear-gradient(45deg, #00ff99, #00ccff);
+}
+
+.server-btn:hover {
+	background: #2a2a2a;
+}
+
+/* ... существующие стили ... */
+
+/* Секция О нас */
+#about {
+	padding: 5rem 1rem;
+	background: #111;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.about-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.about-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.disclaimer-card,
+.developer-card,
+.features-list {
+	background: #1a1a1a;
+	padding: 2rem;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s;
+}
+
+.disclaimer-card:hover,
+.developer-card:hover,
+.features-list:hover {
+	transform: translateY(-5px);
+	background: #222;
+}
+
+.about-content h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.developer-info {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.developer-info i {
+	font-size: 3rem;
+	color: #00ff88;
+}
+
+.github-link {
+	color: #00bfff;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.github-link:hover {
+	color: #00ff88;
+}
+
+.features-list ul {
+	list-style: none;
+}
+
+.features-list li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	color: #aaa;
+}
+
+.features-list i {
+	color: #00ff88;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+	.about-content {
+		grid-template-columns: 1fr;
+	}
+
+	.disclaimer-card,
+	.developer-card,
+	.features-list {
+		padding: 1.5rem;
+	}
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+	.download-content {
+		padding: 1.5rem;
+	}
+
+	.platform-btn {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.download-buttons {
+		flex-direction: column;
+	}
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+	.about-content {
+		grid-template-columns: 1fr;
+	}
+
+	.disclaimer-card,
+	.developer-card,
+	.features-list {
+		padding: 1.5rem;
+	}
+}
+
+/* Анимации */
+@keyframes logoGlow {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes titleSlide {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes buttonPop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+	.hero {
+		flex-direction: column;
+		text-align: center;
+		padding-top: 5rem;
+	}
+
+	.hero-content {
+		padding-right: 0;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+	}
+
+	nav ul {
+		display: none;
+	}
+}
+
+/* Добавляем стили для изображения sprout */
+.hero-image {
+	position: absolute;
+	right: -50px;
+	top: 50%;
+	transform: translateY(-50%) rotate(-15deg);
+	width: 400px;
+	opacity: 0.4;
+	transition: opacity 0.3s ease;
+}
+
+.hero-image img {
+	width: 100%;
+	height: auto;
+	filter: blur(1px);
+}
+
+/* Вторая картинка */
+.line-image {
+	position: absolute;
+	left: -30px;
+	bottom: 50px;
+	width: 300px;
+	opacity: 0.3;
+	transform: rotate(10deg);
+}
+
+.line-image img {
+	width: 100%;
+	height: auto;
+	filter: blur(1px);
+}
+
+/* Добавляем декоративные изображения листвы */
+.hero {
+	position: relative;
+	overflow: hidden;
+}
+
+/* Дополнительные листья на фоне */
+.leaf-bg-1 {
+	position: absolute;
+	right: 10%;
+	top: 15%;
+	font-size: 48px;
+	opacity: 0.2;
+	transform: rotate(25deg);
+}
+
+.leaf-bg-2 {
+	position: absolute;
+	left: 5%;
+	bottom: 20%;
+	font-size: 42px;
+	opacity: 0.15;
+	transform: rotate(-15deg);
+}
+
+.leaf-bg-3 {
+	position: absolute;
+	right: 15%;
+	bottom: 25%;
+	font-size: 36px;
+	opacity: 0.2;
+	transform: rotate(45deg);
+}
+
+/* Секция инструкций */
+#instructions {
+	padding: 5rem 1rem;
+	background: #0a0a0a;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.instructions-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.instruction-card {
+	background: #1a1a1a;
+	padding: 2rem;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s;
+}
+
+.instruction-card:hover {
+	transform: translateY(-5px);
+	background: #222;
+}
+
+.instruction-card h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.step-list,
+.notes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.step,
+.note {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.step i,
+.note i {
+	color: #00ff88;
+	font-size: 1.2rem;
+	margin-top: 0.2rem;
+}
+
+.step p,
+.note p {
+	color: #aaa;
+	flex: 1;
+}
+
+code {
+	background: #2a2a2a;
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	font-family: monospace;
+	color: #00ff88;
+}
+
+.instruction-card a {
+	color: #00bfff;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.instruction-card a:hover {
+	color: #00ff88;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+	.instructions-container {
+		grid-template-columns: 1fr;
+	}
+
+	.instruction-card {
+		padding: 1.5rem;
+	}
+}
+
+/* Стили для кнопки в навигации */
+.instruction-btn {
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0;
+}
+
+.instruction-btn:hover {
+	color: #00ff88;
+}
+
+/* Стили для панели инструкции */
+.instruction-panel {
+	position: fixed;
+	right: -450px;
+	top: 0;
+	width: 450px;
+	height: 100vh;
+	background: #1a1a1a;
+	box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+	z-index: 1001;
+	transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	overflow-y: auto;
+}
+
+.instruction-panel.active {
+	right: 0;
+}
+
+.instruction-content {
+	padding: 2.5rem;
+}
+
+.instruction-content h2 {
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	background: linear-gradient(45deg, #00ff88, #00bfff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+}
+
+.step-group {
+	margin-bottom: 2.5rem;
+	padding: 1.8rem;
+	background: #222;
+	border-radius: 15px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease;
+}
+
+.step-group:hover {
+	transform: translateY(-2px);
+}
+
+.step-group h3 {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	margin-bottom: 1.5rem;
+	color: #00ff88;
+	font-size: 1.2rem;
+}
+
+.step-group ol,
+.step-group ul {
+	margin-left: 1.5rem;
+	color: #aaa;
+}
+
+.step-group li {
+	margin-bottom: 1rem;
+	line-height: 1.6;
+}
+
+/* Стили для формы подключения */
+.connection-form {
+	padding: 1rem 0;
+}
+
+.input-group {
+	margin-bottom: 1.2rem;
+}
+
+.input-group label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: #aaa;
+	font-size: 0.9rem;
+}
+
+.input-group input {
+	width: 100%;
+	padding: 0.8rem 1rem;
+	background: #2a2a2a;
+	border: 1px solid #333;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+	outline: none;
+	border-color: #00ff88;
+	box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.1);
+}
+
+.input-group input::placeholder {
+	color: #666;
+}
+
+.tip {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #888;
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+
+/* Стили для списка подсказок */
+.tips-list {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0;
+}
+
+.tips-list li {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	margin-bottom: 1rem;
+	color: #aaa;
+}
+
+.tips-list i {
+	color: #00ff88;
+	font-size: 1.1rem;
+}
+
+/* Стили для кода */
+code {
+	display: inline-block;
+	background: #2a2a2a;
+	padding: 0.4rem 0.8rem;
+	border-radius: 6px;
+	font-family: monospace;
+	color: #00ff88;
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+	border: 1px solid #333;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0.5rem;
+	transition: color 0.3s;
+	opacity: 0.7;
+}
+
+.close-btn:hover {
+	color: #00ff88;
+	opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.instruction-panel {
+		width: 100%;
+		right: -100%;
+	}
+
+	.instruction-content {
+		padding: 2rem 1.5rem;
+	}
+
+	.step-group {
+		padding: 1.5rem;
+	}
+}
+
+/* Затемнение фона */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+}
+
+.overlay.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Блокировка прокрутки при открытой панели */
+.no-scroll {
+	overflow: hidden;
+}
+
+/* Стили для кода */
+code {
+	display: inline-block;
+	background: #2a2a2a;
+	padding: 0.3rem 0.6rem;
+	border-radius: 4px;
+	font-family: monospace;
+	color: #00ff88;
+	margin: 0.5rem 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.instruction-panel {
+		width: 100%;
+		right: -100%;
+	}
+}
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #444;
+}
+
+/* Для Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #333 #0a0a0a;
+}
+
+/* Для панели инструкций */
+.instruction-panel::-webkit-scrollbar {
+	width: 6px;
+}
+
+.instruction-panel::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 3px;
+}
+
+.instruction-panel::-webkit-scrollbar-track {
+	background: #1a1a1a;
+}
